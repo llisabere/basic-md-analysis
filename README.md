@@ -16,7 +16,7 @@ This project analyzes an all-atom molecular dynamics simulation of short peptide
 - `numpy`
 - `matplotlib`
 - `seaborn`
-- 
+
 ## Folder Structure
 
 <pre>
