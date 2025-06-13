@@ -1,10 +1,8 @@
 # basic-md-analysis
 
-This project demonstrates the use of Python-based data science tools to explore and analyze molecular dynamics simulation data.
-
 ## Project Overview
 
-The data used in this project comes from simulation outputs (GROMACS), representing quantities such as energy, temperature, and pressure over time. The goal is to apply scientific data analysis and visualization techniques to extract insights and demonstrate practical coding skills.
+This project analyzes an all-atom molecular dynamics simulation of short peptides in explicit solvent using Python-based tools (MDAnalysis, NumPy, Matplotlib). It extracts structural and dynamic properties such as RMSD, radius of gyration, intermolecular contacts, and diffusion. The goal is to showcase molecular simulation analysis using data science workflows and build an open-source example of MD-based feature extraction.
 
 ## Objectives
 
@@ -18,8 +16,7 @@ The data used in this project comes from simulation outputs (GROMACS), represent
 - `numpy`
 - `matplotlib`
 - `seaborn`
-- `jupyter`
-
+- 
 ## Folder Structure
 
 <pre>
@@ -45,9 +42,9 @@ The data used in this project comes from simulation outputs (GROMACS), represent
 
 3. Create and activate a virtual environment (optional):
 
-   python -m venv venv
+   python -m md-env md-env
    
-   source venv/bin/activate  # or venv\Scripts\activate on Windows
+   source md-env/bin/activate  # or md-env\Scripts\activate on Windows
 
 4. Install dependencies:
 
