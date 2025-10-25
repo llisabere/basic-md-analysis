@@ -11,6 +11,11 @@ This project analyzes an all-atom molecular dynamics simulation of short peptide
 - Visualize time series and statistical distributions
 - Automate parts of the analysis with custom scripts
 
+## 🌟 Highlights
+- Visualization of peptide trajectory movement (XYZ displacement) (notebooks/reading_trj.ipynb)
+- RMSD and radius of gyration evolution over time (notebooks/rmsd_gyration.ipynb)
+- Planned: residue contacts, density profiles, ML clustering
+
 ## Tools & Libraries
 
 - `numpy`
@@ -21,12 +26,26 @@ This project analyzes an all-atom molecular dynamics simulation of short peptide
 ## Folder Structure
 
 <pre>
-  simulation-data-analysis/ 
-├── data/              # Raw and processed data 
-├── notebooks/         # Main analysis notebook
-├── scripts/           # Python scripts for preprocessing
-├── figures/           # Exported plots
-└── README.md
+basic-md-analysis/
+├── README.md
+├── requirements.txt
+│
+├── data/                    # raw and processed data                 
+│
+├── notebooks/               # main analysis file
+│   ├── reading_trj.ipynb
+│   ├── rmsd_gyration.ipynb
+│   ├── contacts.ipynb       # next to add
+│   ├── density.ipynb        # next to add
+│   └── clustering.ipynb     # next to add + scikit-learn
+│
+├── scripts/
+│   └── __init__.py
+│   └── helper.py            # python scripts for analysis and preprocessing
+│
+└── figures/                 # exported plots
+    ├── rmsd.png
+    ├── gyration.png
 </pre>
 
 ## Example Visualizations

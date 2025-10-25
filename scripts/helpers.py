@@ -59,6 +59,6 @@ def get_chain_com(u,chains):
     nchains = len(chains)
     nframes = u.trajectory.n_frames
     chains_com = np.zeros((nchains,nframes,3))
-    for i,frame in enumerate(u.trajectory):
+    for i,_ in enumerate(u.trajectory):
         for j,chain in enumerate(chains):
             chains_com[j,i] = chain.center_of_geometry()
