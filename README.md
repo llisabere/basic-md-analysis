@@ -31,7 +31,7 @@ This project analyzes an all-atom molecular dynamics simulation of short peptide
 
 ## Example Visualizations
 
-![energy plot](figures/energy_plot.png)
+![energy plot](figures/rmsd.png)
 
 ## How to Run
 
