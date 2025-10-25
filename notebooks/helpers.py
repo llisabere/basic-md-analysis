@@ -8,6 +8,7 @@ def init_trj(pdb,xtc):
     nframes = u.trajectory.n_frames
     dt = u.trajectory.dt
     units = u.trajectory.units
+    box = u.dimensions
     protein = u.select_atoms("protein and not resname ACE and not resname NME") #contains only protein information; here is the same as all atoms
     nchains = u.select_atoms('resname ACE and name CH3').n_atoms
     natoms = protein.n_atoms
@@ -15,6 +16,7 @@ def init_trj(pdb,xtc):
     residues = np.unique(u.residues.resnames)
 
     print("Trjectory of",nframes,"frames of", u.trajectory.totaltime, units['time'], "with a timestep of", dt, units['time'])
+    print(f"Box size: {box[0]} {box[1]} {box[2]} $\AA$")
     print("There is", natoms,"total atoms (", nchains,"chains each of",natoms_perchain,"atoms )")
     print("Unique residues ", residues)
 
@@ -52,3 +54,11 @@ def plot_histo(ax,a,nframes,bins=50):
 
 def save_png(fig,name,dpi=150):
     plt.savefig(name,dpi=dpi,bbox_inches='tight')
+
+def get_chain_com(u,chains):
+    nchains = len(chains)
+    nframes = u.trajectory.n_frames
+    chains_com = np.zeros((nchains,nframes,3))
+    for i,frame in enumerate(u.trajectory):
+        for j,chain in enumerate(chains):
+            chains_com[j,i] = chain.center_of_geometry()
